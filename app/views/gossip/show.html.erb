@@ -11,6 +11,11 @@
     <br>
     <small><%= "le #{(@gossip.created_at.to_s)[0..9]}"%></small>
 </p>
+<p>
+  <%= link_to "Editer", edit_gossip_path(@gossip.id), :class =>"btn btn-secondary" %>
+  <a href="<% gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Veux-tu vraiment supprimer ce Gossip ? Si oui, tu peux confirmer, mais n'oublier pas que ce gossip disparaîtra à tous jamais.."  data-method="DELETE"> Supprimer <a/>
+
+</p>
 
 
 

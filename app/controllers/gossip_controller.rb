@@ -22,4 +22,21 @@ class GossipController < ApplicationController
     @user = User.new
     @gossip = Gossip.new
   end
+
+  def edit
+    @gossip = Gossip.find(params["id"])
+  end
+
+  def update
+    @gossip = Gossip.find(params["id"])
+    gossip_params = params.require(:gossip).permit(:title, :content)
+    @gossip.update(gossip_params)
+    redirect_to gossip_path
+  end
+
+  def destroy
+    @gossip = Gossip.find(params["id"])
+    @gossip.destroy
+    redirect_to root_path
+  end
 end
