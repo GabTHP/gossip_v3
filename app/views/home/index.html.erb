@@ -1,0 +1,37 @@
+<div class="jumbotron card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+  <div class="text-white text-center py-5 px-4">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>The Gossip project</strong></h2>
+      <p class="mx-5 mb-5"> Un peu comme dans la série éponyme, c'est ici que ragotteur, fouineur, snitches, Sixnine.. bref tous les addictes du comérage et du cassage de sucre se réunissent pour balancer les meilleurs gossips. Tu peux toi-même contribuer à la communauté de The Gossip Project, ici personne ne te jugera !
+      </p>
+      <a type="button"  href="/gossip/new" class="btn btn-secondary btn-lg">Balance ton Gossip</button></a>
+
+    </div>
+  </div>
+</div>
+<h2>Voilà pour toi en esclusivité tous les Gossips de la communauté. <br> Amuse toi  petite fouine..!</h2>
+<br>
+
+        <div  class="card-deck mb-3 d-flex justify-content-between">
+          <% @gossips.each do |gossip| %>
+            <div class="col-sm-6 mt-4 mb-4">
+              <div class="card">
+                <div class="card-body d-flex align-items-center flex-column">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text"><strong><%= gossip.title %></strong></p>
+                  <p class="card-text"><%= gossip.content %></p>
+                  <%= link_to "Lire ce Gossip", gossip_path(gossip.id), :class =>"btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          <%end %>
+        </div>
+
+Réduire
+
+
+
+
+
+
+  

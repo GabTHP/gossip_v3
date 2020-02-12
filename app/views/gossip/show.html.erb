@@ -1,0 +1,17 @@
+<h1><%= @gossip.title %></h1>
+<hr>
+<p class="gossip"> 
+    <%= @gossip.content%>
+</p>
+<p>    
+    <br>
+    <span> Balancé par </span><a href="/author/<%= @gossip.user_id %>"><%= @gossip.user.first_name %></a>
+    <br>
+    <span> <%= link_to " #{@gossip.user.city.name} ", city_path(@gossip.user.city.id), :class =>"btn btn-primary" %></a>
+    <br>
+    <small><%= "le #{(@gossip.created_at.to_s)[0..9]}"%></small>
+</p>
+
+
+
+

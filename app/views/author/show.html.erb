@@ -1,0 +1,23 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3"><%= @user.first_name  %> <%= @user.last_name %></h1>
+    <p ><strong><%= "#{@user.age} ans"%></strong></p>
+    <p> <%= @user.email %> </p>
+<p> <a> <%= link_to " #{@user.city.name} ", city_path(@user.city.id), :class =>"btn btn-primary" %></a></p>
+<br>
+    <p><blockquote><%= @user.description %></blockquote></p>
+  </div>
+</div>
+<br>
+
+<p>
+    <% @gossips.each do |gossip| %>
+        <p>
+          <% if gossip.user_id == @user.id then %>
+          <a href="/gossip/<%= gossip.id.to_i %>"><%= gossip.title %></a>
+        </p>
+      <% end %>
+    <% end %>
+</p>
+
+
