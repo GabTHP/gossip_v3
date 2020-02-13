@@ -19,7 +19,8 @@ class UsersController < ApplicationController
       city: City.all.sample
       )
         if @user.save
-      redirect_to root_path
+      redirect_to profil_index_path
+      log_in(@user)
       flash.alert = "Ton compte a bien été créé et tu es connecté !"
 
     else
