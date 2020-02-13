@@ -1,0 +1,8 @@
+<div class="ml-5" style="width: 600px">
+<%= form_with model: @comment class: "nifty_form" do |f| %>
+  <%= f.text_area :content, size: "60x12" %>
+  <%= f.submit "Edit Post" %>
+<% end %> 
+</div>
+
+<a href="/gossip/<%= @gossip.id %>/comments/<%= @comment.id %>/edit" data-confirm="On le fait vraiment ??" data-method="DELETE" class="btn btn-danger">Delete</a>

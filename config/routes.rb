@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :gossip
+  resources :gossip do 
+    resources :comments
+  end
   resources :welcome
   resources :team
   resources :contact

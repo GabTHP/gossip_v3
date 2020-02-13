@@ -1,6 +1,7 @@
 class GossipController < ApplicationController
+   before_action :find_post, only: [:show, :edit, :update, :destroy]
   def show
-    @gossip = Gossip.find(params["id"])
+    @comment = Comment.where(gossip_id: @gossip.id)
   end
 
   def create
@@ -39,4 +40,11 @@ class GossipController < ApplicationController
     @gossip.destroy
     redirect_to root_path
   end
+
+  private
+
+  def find_post
+  @gossip = Gossip.find(params[:id])
+  end
+  
 end

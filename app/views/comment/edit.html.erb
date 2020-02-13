@@ -1,0 +1,12 @@
+<%= form_for ([@gossip, @gossip.comments.build]) do |f| %>
+
+<p>
+<%= f.label :content %>
+<%= f.text_area :content %>
+</p>
+
+<p>
+
+<%= f.submit %>
+</p>
+<% end %>

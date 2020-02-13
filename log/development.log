@@ -29792,3 +29792,2199 @@ Processing by GossipController#edit as HTML
 Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-02-12 18:17:58 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 75ms (Views: 61.6ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-12 18:18:01 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.2ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 95ms (Views: 73.1ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:09:46 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (2.1ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 119ms (Views: 96.3ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:09:48 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:09:51 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (1316.0ms)
+Completed 200 OK in 1374ms (Views: 1341.3ms | ActiveRecord: 20.1ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:10:08 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:10:43 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:12:48 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:13:05 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 68ms (Views: 65.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:13:32 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.2ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 54ms (Views: 46.4ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:13:35 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:14:13 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/gossip/4/comments"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:14:24 +0100
+  
+ActionController::RoutingError (uninitialized constant CommentsController):
+  
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.5) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.4.1) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.4.1) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:17:23 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r/LaTs+uwbq7WPQVdpgAj4vlSDVZT9mo21ACrxyJwVu3DuhQ4fByxsbkQrscNvJnGEbSjNrvOCdsSSHLu01iug==", "comment"=>{"content"=>"Hola senorito", "user_id"=>"Gabso"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.9ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 60ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:17:23 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 92ms (Views: 84.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:17:34 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.7ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:17:35 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 69ms (Views: 63.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:17:44 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UvvpAumeTqKrd2vaXl2OHoWXCZ94Sjj1qZkkG+GdtixKB9scx8D93tbL3XQ083z2FjSTJvvq2XoegAd/RlkVzQ==", "comment"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:17:44 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:17:47 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z/rYf5j0BPavQOtwGppbYWJ0Hk+FwRu+RWPKFUqKaLkldTyLrA/UZQ5OXuLxanzCvugbySP8fXNyFEcm9dNr2w==", "comment"=>{"content"=>"bgb", "user_id"=>"bgb"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 9ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:17:48 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 47ms (Views: 40.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/gossip/4/edit" for 127.0.0.1 at 2020-02-13 10:17:51 +0100
+Processing by GossipController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:28
+  Rendering gossip/edit.html.erb within layouts/application
+  Rendered gossip/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 45.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:17:57 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:18:00 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 91ms (Views: 85.2ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:18:04 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwiSTQJQt2mbDv+94ixBiTLJtutdACR8zcVbZ7/n9TmT9KBTLA4EFeaySROIgrNhoWosUt6gxfN63HgDGCNW2A==", "comment"=>{"content"=>"bbb", "user_id"=>"bbb"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:18:04 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:3
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/gossip/1/comment" for 127.0.0.1 at 2020-02-13 10:18:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/gossip/1/comment"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gossip/1/comments" for 127.0.0.1 at 2020-02-13 10:18:47 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CommentsController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:22:06 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_post' for #<GossipController:0x00007fa3f008d658>):
+  
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:22:16 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 95ms (Views: 77.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:22:18 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 122ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_post' for #<GossipController:0x00007fa41c4778c8>):
+  
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:22:20 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:22:22 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find_post' for #<GossipController:0x00007fa3f02cf6a0>):
+  
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-02-13 10:23:44 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 46ms (Views: 35.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:23:46 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (54.2ms)
+Completed 200 OK in 102ms (Views: 76.7ms | ActiveRecord: 14.1ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:23:50 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OBIYAcuGqZ0rOzBo9FJ/+Fuce7REFAR4eSKqUWyn5zoHHp+KXCp2gkQWm/Jf7sXcs3rV1KwsZ5W/anN4nY8fQ==", "comment"=>{"content"=>"dd", "user_id"=>"dd"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 19ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:23:50 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:23:57 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1u49Jwyr5d8lCJDXXB0sWo43mA3mq9sBryMw0AtvIACUYdnTOFA1TIQGJUW37Qv5Uqudi0CWvcyYVL3jtDYjYg==", "comment"=>{"content"=>"vrtrbey", "user_id"=>"btzb"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:23:57 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:24:01 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CommentsController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:24:07 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b54E3EnDg+J1yW/uDBLg6QkpRPmFx9O8e6YL1jz0MektEeAofThTcdTH2nzn4sdK1bVBfyP6tXFM0Yblg60yiw==", "comment"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:24:07 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 51ms (Views: 44.9ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:25:12 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z8sZgzA8WAQ9Ys8koCWAJnTcMR6hYzJdLfm49SccVHeNRP13BMeIl5xserZL1aeFqEA0mAdeVJAajjXGmEVXFQ==", "comment"=>{"content"=>"gg", "user_id"=>"ee"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 43ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:25:13 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 74ms (Views: 67.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:25:19 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 70ms (Views: 65.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:28:23 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B2sel5Zq/baopX2pRjMhJ13Zbv/jaVj5OGIIJPzKxooflyyJuDROytUZywcsndPPznr0RmDJuXaPeytAWw5law==", "comment"=>{"content"=>"tydtrtfyijplùmljyresrzrt btrertryujikjhytf crtrvybuioiutcrexr", "user_id"=>"niyvtuc"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 11ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:28:23 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 65ms (Views: 59.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:30:46 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  Rendered gossip/show.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = comment.user %>
+    39:         <p> <%= @user.first_name %> </p>
+    40:         <p> <%= comment.content %> </p>
+    41:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    42:     <% end %> 
+  
+app/views/gossip/show.html.erb:39:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171484313380'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171484313380'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:30:54 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  Rendered gossip/show.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = comment.user %>
+    39:         <p> <%= @user.first_name %> </p>
+    40:         <p> <%= comment.content %> </p>
+    41:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    42:     <% end %> 
+  
+app/views/gossip/show.html.erb:39:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171342980420'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171342980420'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:31:20 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  Rendered gossip/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/gabdev/Documents/THP/S5/mercredi_still_on_rails/app_gossip_project_ruby_on_rails-master/app/views/gossip/show.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/gossip/show.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:31:51 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:31:53 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Pyku4WivUL4ar5weIQdyjHgpHFEvwebxE9I3/fFNp6uc0BPsVlt0VlkC+KTdDpp7Xyh9+KCYVbzOMXsSJw1/A==", "comment"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:31:53 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:31:58 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NourmQ8VzrPvzRLTqp+sdUJmA2EnFcXzDPzE4MOPAGp0BE9tO+4eIE7Dp0FBb4vWnvoG54Eooz47i0nTfNYDCA==", "comment"=>{"content"=>"cccc cccc", "user_id"=>"cccc ccc"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:31:59 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 75ms (Views: 65.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:33:06 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.7ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 63ms (Views: 56.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:34:12 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:35:59 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mLNvMaBI9Y9Evtg5UO0eJ156i2yCzfB99uqqUMyCmHraPIvFlLMlHOWwbau7HTmEguaO6iTwlrDBnSdjc9ubGA==", "comment"=>{"content"=>"jvt ivti v uooy yof u", "user_id"=>"jvtfy "}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:35:59 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  Rendered gossip/show.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/gabdev/Documents/THP/S5/mercredi_still_on_rails/app_gossip_project_ruby_on_rails-master/app/views/gossip/show.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/gossip/show.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:36:28 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered gossip/show.html.erb within layouts/application (377.0ms)
+Completed 500 Internal Server Error in 383ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comments' for #<#<Class:0x00007fa411c19488>:0x00007fa41056ad90>
+Did you mean?  comment
+               @comment):
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = comments.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    41:       
+  
+app/views/gossip/show.html.erb:38:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171312943360'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171312943360'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:36:40 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa414693128>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comment.each do |comment| %>
+    38:     <% @user = comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171346897060'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:37:17 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered gossip/show.html.erb within layouts/application (371.2ms)
+Completed 500 Internal Server Error in 378ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comments' for #<#<Class:0x00007fa411c19488>:0x00007fa41176b940>
+Did you mean?  comment
+               @comment):
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = comments.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    41:       
+  
+app/views/gossip/show.html.erb:38:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171322200220'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171322200220'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:37:27 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered gossip/show.html.erb within layouts/application (336.2ms)
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comments' for #<#<Class:0x00007fa411c19488>:0x00007fa41375a2d8>
+Did you mean?  comment
+               @comment):
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = comments.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    41:       
+  
+app/views/gossip/show.html.erb:38:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171338921960'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171338921960'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:37:54 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  Rendered gossip/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/gabdev/Documents/THP/S5/mercredi_still_on_rails/app_gossip_project_ruby_on_rails-master/app/views/gossip/show.html.erb:37: syntax error, unexpected tIVAR, expecting '('
+'.freeze;     @gossip.@comment.each do |comment| 
+                      ^~~~~~~~):
+  
+app/views/gossip/show.html.erb:37: syntax error, unexpected tIVAR, expecting '('
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:38:38 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa41328cc60>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comment.each do |comment| %>
+    38:     <% @user = @comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171336372340'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:38:55 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:37
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered gossip/show.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<ActiveRecord::Relation []>):
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comments.each do |comment| %>
+    38:     <% @user = @comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    41:       
+  
+app/views/gossip/show.html.erb:38:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171339270620'
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171339270620'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:39:35 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa411731f60>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comment.each do |comment| %>
+    38:     <% @user = comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171322014400'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:41:57 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `Comment' for #<Gossip:0x00007fa411c28690>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.Comment.each do |comment| %>
+    38:     <% @user = @comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171324648680'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:42:16 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa424c9c4b0>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comment.each do |comment| %>
+    38:     <% @user = @comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171484231760'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:42:19 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa413735690>
+Did you mean?  comments
+               comments=
+               content):
+    34: 
+    35: 
+    36:   <h2>All comments :</h2>
+    37:     <% @gossip.comment.each do |comment| %>
+    38:     <% @user = @comment.user %>
+    39:      
+    40:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:37:in `_app_views_gossip_show_html_erb__3762111315503627187_70171338816880'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:43:51 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Gossip:0x00007fa425935e60>
+Did you mean?  comments
+               comments=
+               content):
+    33: <% end %>
+    34: 
+    35: 
+    36: <% if @gossip.comment.size >= 2 %>
+    37:   <h2>All comments :</h2>
+    38:     <% @gossip.comment.each do |comment| %>
+    39:     <% @user = comment.user %>
+  
+app/views/gossip/show.html.erb:36:in `_app_views_gossip_show_html_erb__3762111315503627187_70171490844120'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:44:52 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:44:57 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AgLG3S64g83rVC00NiyiuFiIckoKRDLEWbLWRbh8judAjSIpGkNTXkpamKbd3IUbhBR3zKx5VAluxVt2ByWNhQ==", "comment"=>{"content"=>"bb", "user_id"=>"bb"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 14ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:44:57 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.8ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 52ms (Views: 46.5ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:45:00 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AA52nC6osBiq6WVp7L1HJTQNpb5SagkWYfT4DCFoj4lCgZJoGlNgiwvn0PsHTWCG6JGgOPRXb9tWg3U/njGM6w==", "comment"=>{"content"=>"btrbb", "user_id"=>"erve"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:45:00 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:36
+  Rendered gossip/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:46:30 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o6I5/QQ1d3EEoPiq3OB1QcXUNTUnwnUOViZXa8wvet7hLd0JMM6n4qWuTTg3EFLiGUgws4H/E8NhUdpYc3Z5vA==", "comment"=>{"content"=>"cc ", "user_id"=>"ccc"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 11ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:46:30 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (1.8ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  Rendered gossip/show.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/home/gabdev/Documents/THP/S5/mercredi_still_on_rails/app_gossip_project_ruby_on_rails-master/app/views/gossip/show.html.erb:56: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/gossip/show.html.erb:56: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:46:43 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (13.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    40:     <% @gossip.comments.each do |comment| %>
+    41:     <% @user = comment.user %>
+    42:     
+    43:         <p> <%= @user.first_name %> </p>
+    44:         <p> <%= comment.content %> </p>
+    45:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    46:       
+  
+app/views/gossip/show.html.erb:43:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171338065840'
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_70171338065840'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:47:22 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/gossip/4/comments" for 127.0.0.1 at 2020-02-13 10:47:32 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGYp5Ehr+hP0jBmW9MuVIDcYTKkxcDw1L+aKwbiUKXXu6c0QfJAqgFWCrAQfO7KD64RJL5dNWvgYkQfyB80qFw==", "comment"=>{"content"=>"nunono nionio no", "user_id"=>"noinion"}, "commit"=>"Create Comment", "gossip_id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:4
+Redirected to http://localhost:3000/gossip/4
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:47:32 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 62ms (Views: 56.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/gossip/4/comments//edit" for 127.0.0.1 at 2020-02-13 10:47:35 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for CommentsController):
+  
+actionpack (5.2.4.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.4.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.2.1) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.1) lib/rack/etag.rb:27:in `call'
+rack (2.2.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.1) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.1) lib/rack/session/abstract/id.rb:265:in `context'
+rack (2.2.1) lib/rack/session/abstract/id.rb:259:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.1) lib/rack/method_override.rb:24:in `call'
+rack (2.2.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.1) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:47:37 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:49:46 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.3ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    40:     <% @gossip.comments.each do |comment| %>
+    41:     <% @user = comment.user %>
+    42:     
+    43:         <p> <%= @user.first_name %> </p>
+    44:         <p> <%= comments.content %> </p>
+    45:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    46:       
+  
+app/views/gossip/show.html.erb:43:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171321721400'
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_70171321721400'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:50:10 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `User' for #<Comment:0x00007fa413579568>
+Did you mean?  user=):
+    38: 
+    39:   <h2>All comments :</h2>
+    40:     <% @gossip.comments.each do |comment| %>
+    41:     <% @user = comment.User %>
+    42:     
+    43:         <p> <%= @user.first_name %> </p>
+    44:         <p> <%= comments.content %> </p>
+  
+app/views/gossip/show.html.erb:41:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171338177560'
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_70171338177560'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:50:27 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    39:   <h2>All comments :</h2>
+    40:     <% @gossip.comments.each do |comment| %>
+    41:     
+    42:         <p> <%= @user.first_name %> </p>
+    43:         <p> <%= comments.content %> </p>
+    44:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    45:       
+  
+app/views/gossip/show.html.erb:42:in `block in _app_views_gossip_show_html_erb__3762111315503627187_47385080132020'
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_47385080132020'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:51:05 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1 LIMIT $2[0m  [["gossip_id", 4], ["LIMIT", 11]]
+  ↳ /home/gabdev/.rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered gossip/show.html.erb within layouts/application (329.5ms)
+Completed 500 Internal Server Error in 334ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `comments' for #<#<Class:0x00007fa411c19488>:0x00007fa3f0091d98>
+Did you mean?  comment
+               @comment):
+    39:   <h2>All comments :</h2>
+    40:     <% @gossip.comments.each do |comment| %>
+    41:     
+    42:         <p> <%= comments.content %> </p>
+    43:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+    44:       
+    45:     <% end %> 
+  
+app/views/gossip/show.html.erb:42:in `block in _app_views_gossip_show_html_erb__3762111315503627187_70171041764580'
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_70171041764580'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:51:52 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  Rendered gossip/show.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Gossip:0x00007fa4257a6978>):
+    37: 
+    38: 
+    39:   <h2>All comments :</h2>
+    40:     <% @gossip.each do |comment| %>
+    41:     
+    42:         <p> <%= comment.content %> </p>
+    43:         <p><a href="/gossip/<%= @gossip.id %>/comments/<%= comment.id %>/edit" class="btn btn-primary">Edit the comment</a></p>
+  
+app/views/gossip/show.html.erb:40:in `_app_views_gossip_show_html_erb__3762111315503627187_70171490049760'
+Started GET "/gossip/4" for 127.0.0.1 at 2020-02-13 10:52:04 +0100
+Processing by GossipController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGossip Load (0.5ms)[0m  [1m[34mSELECT  "gossips".* FROM "gossips" WHERE "gossips"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:47
+  Rendering gossip/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:8
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/gossip/show.html.erb:10
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."gossip_id" = $1[0m  [["gossip_id", 4]]
+  ↳ app/views/gossip/show.html.erb:40
+  Rendered gossip/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 1.8ms)
+
+
