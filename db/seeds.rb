@@ -18,6 +18,7 @@ Like.destroy_all
 
 PrivateMessage.destroy_all
 
+
 #CITIES
 # To have the city name and zip code equals, I tried to use the gem geokit and zipcode with no success
 count = 0
@@ -101,4 +102,4 @@ count = 0
     #so there are no entries for the comment (it is possible with "optional: true" in the like.rb)
     #but we will have an entry for gossip because c will be an id between 1 and 10
 end
-puts "Seeds loaded"
+puts "Le seed est fait c'est bon"

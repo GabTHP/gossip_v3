@@ -1,0 +1,56 @@
+<h2>Inscris toi pour rejoindre le Gossip Gang!</h2>
+<br>
+<br>
+<h4>Création de compte</h4>
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+    <% if @user.errors.any? %>
+
+    <div class="alert alert-danger" role="alert">
+  <p>Nous n'avons pas réussi à créer ton compte pour la (ou les) raison(s) suivante(s) :</p>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+        </div>
+    <% end %>
+    <p><strong> Réessaye en respectant bien les conditions ;)</strong></p>
+  <% end %>
+
+  <div class="form-group">
+  <label class="col-form-label" for="inputDefault">Prénom</label>
+  <input type="text" class="form-control" placeholder="Ton prénom" id="inputDefault" name="first_name">
+
+  <label class="col-form-label" for="inputDefault">Nom</label>
+  <input type="text" class="form-control" placeholder="Ton nom" id="inputDefault" name="last_name">
+
+  <label class="col-form-label" for="inputDefault">Adresse email</label>
+  <input type="text" class="form-control" placeholder="Ton email" id="inputDefault" name="email">
+
+  <label class="col-form-label" for="inputDefault">Age</label>
+  <input type="text" class="form-control" placeholder="Ton age" id="inputDefault" name="age">
+
+  <label class="col-form-label" for="inputDefault">ville</label>
+  <input type="text" class="form-control" placeholder="Ta ville" id="inputDefault" name="city">
+</div>
+
+<div class="form-group">
+  <label for="exampleTextarea">Une petite description pour te présenter à la communauté :)</label>
+  <textarea class="form-control" id="exampleTextarea" rows="6" name="description"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleInputPassword1">Mot de passe</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe" name="password">
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="exampleInputPassword1">Confirmer le mot de passe</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Retaper le mot de passe" name="password_confirmation">
+    </div>
+</div>
+
+  <%= submit_tag "Créer mon compte" %>
+
+
+
+<% end %>
