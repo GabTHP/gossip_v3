@@ -1,14 +1,16 @@
 class GossipController < ApplicationController
    before_action :find_post, only: [:show, :edit, :update, :destroy]
+   before_action :is_author, only: [:edit, :update, :destroy]
+   before_action :authenticate_user, only: [:index]
   
    def index
    @gossip = Gossip.new
   end
 
-    def view
+  def view
     id = session[:user_id]
     @user = User.find(id) #et hop, cette variable @user est l'instance User contenant toutes les infos de l'utilisateur connecté
-    end
+  end
 
 
   def show
@@ -16,10 +18,11 @@ class GossipController < ApplicationController
   end
 
   def create
+
+
    @gossip = Gossip.create(title:params[:title], content: params[:content], user_id: current_user.id)
     if @gossip.save 
       redirect_to root_path
-      flash.alert = "Le potin a bien été enregistré !"
     else
       render 'new'
     end
@@ -55,9 +58,9 @@ class GossipController < ApplicationController
   end
 
 
-  def has_account
-    unless logged_in?
-      flash[:danger] = "Vous devez être connecté pour publier ou modifier un potin."
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Please log in."
       redirect_to new_session_path
     end
   end

@@ -42924,3 +42924,207 @@ Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
 NoMethodError (undefined method `id' for nil:NilClass):
   
 app/controllers/gossip_controller.rb:19:in `create'
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:18:14 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugCOHBDz4Ek/GRL2Azttfy81C9RXzaSaT/1Pkp26hGzTyPte+GyyiNTkuDLXESi6W1Gk1G0YVefU7ykdhPQDzA==", "title"=>"Salut", "content"=>"Coucou"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/gossip_controller.rb:20:in `create'
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:22:44 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugCOHBDz4Ek/GRL2Azttfy81C9RXzaSaT/1Pkp26hGzTyPte+GyyiNTkuDLXESi6W1Gk1G0YVefU7ykdhPQDzA==", "title"=>"Salut", "content"=>"Coucou"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/gossip_controller.rb:23:in `create'
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:23:33 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugCOHBDz4Ek/GRL2Azttfy81C9RXzaSaT/1Pkp26hGzTyPte+GyyiNTkuDLXESi6W1Gk1G0YVefU7ykdhPQDzA==", "title"=>"Salut", "content"=>"Coucou"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/gossip_controller.rb:23:in `create'
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:24:47 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugCOHBDz4Ek/GRL2Azttfy81C9RXzaSaT/1Pkp26hGzTyPte+GyyiNTkuDLXESi6W1Gk1G0YVefU7ykdhPQDzA==", "title"=>"Salut", "content"=>"Coucou"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (3.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gossip_controller.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering gossip/new.html.erb within layouts/application
+  Rendered gossip/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 97ms (Views: 60.4ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:24:55 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugCOHBDz4Ek/GRL2Azttfy81C9RXzaSaT/1Pkp26hGzTyPte+GyyiNTkuDLXESi6W1Gk1G0YVefU7ykdhPQDzA==", "title"=>"Salut", "content"=>"Coucou"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:24
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gossip_controller.rb:24
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering gossip/new.html.erb within layouts/application
+  Rendered gossip/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 63ms (Views: 55.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:25:05 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6eewTqfdbFYq7A9KFfFpk3GOybTcnViAcywxLU6/EgDfHaH4i/x40OzYFPUxaZtkm2UYYAzFpCw/1Juyl2Vmhg==", "title"=>"", "content"=>""}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/gossip_controller.rb:23:in `create'
+Started GET "/sessions/new" for 127.0.0.1 at 2020-02-13 20:25:20 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2020-02-13 20:25:24 +0100
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 20:25:26 +0100
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.6ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 64ms (Views: 52.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 20:25:33 +0100
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mGossip Load (0.4ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-02-13 20:25:40 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 95ms (Views: 74.6ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users/create" for 127.0.0.1 at 2020-02-13 20:26:17 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6rm0uJ6S05a6amcu7ojZbvx/oksHvsOFohlWbhQZWc4jcahjlNCPRfDLL38/Xm0/y3n9zvMf7NDaStITVLVTtQ==", "first_name"=>"Gabso", "last_name"=>"Jaded", "email"=>"gab@sojaded.fr", "age"=>"25", "city"=>"Mtp bop a lula", "description"=>"rien à dire", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Créer mon compte"}
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/controllers/users_controller.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "description", "email", "age", "city_id", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Gabso"], ["last_name", "Jaded"], ["description", "rien à dire"], ["email", "gab@sojaded.fr"], ["age", 25], ["city_id", 2], ["created_at", "2020-02-13 19:26:18.016051"], ["updated_at", "2020-02-13 19:26:18.016051"], ["password_digest", "$2a$12$U7MWN21nvvNSbpk.M1BbHeSM.i1YuRuQMyIOyFJtFtZCo.uxNpjDe"]]
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+Redirected to http://localhost:3000/profil
+Completed 302 Found in 335ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/profil" for 127.0.0.1 at 2020-02-13 20:26:18 +0100
+Processing by ProfilController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering profil/index.html.erb within layouts/profil
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/profil/index.html.erb:11
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/profil/index.html.erb:16
+  Rendered profil/index.html.erb within layouts/profil (5.7ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/gossip/new" for 127.0.0.1 at 2020-02-13 20:26:22 +0100
+Processing by GossipController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering gossip/new.html.erb within layouts/profil
+  Rendered gossip/new.html.erb within layouts/profil (1.7ms)
+Completed 200 OK in 68ms (Views: 56.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/gossip" for 127.0.0.1 at 2020-02-13 20:27:07 +0100
+Processing by GossipController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCZGXL7Ap9TjB7CttdaA0xbKLGJcNtcHppa7+lr7K+c17jMeVl/1FQj6Gmlh/MUWYq6DYmbjJno9hN11Q7WsRw==", "title"=>"Les cheveux de Matt.P", "content"=>"A ce qui parait Matt Pokora c'est fait des implants capillaires pourcacher sa calvasse.."}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[36mGossip Create (0.8ms)[0m  [1m[32mINSERT INTO "gossips" ("title", "content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Les cheveux de Matt.P"], ["content", "A ce qui parait Matt Pokora c'est fait des implants capillaires pourcacher sa calvasse.."], ["user_id", 7], ["created_at", "2020-02-13 19:27:07.718141"], ["updated_at", "2020-02-13 19:27:07.718141"]]
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gossip_controller.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gossip_controller.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gossip_controller.rb:24
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-02-13 20:27:07 +0100
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:5
+  Rendering home/index.html.erb within layouts/profil
+  [1m[36mGossip Load (1.0ms)[0m  [1m[34mSELECT "gossips".* FROM "gossips"[0m
+  ↳ app/views/home/index.html.erb:16
+  Rendered home/index.html.erb within layouts/profil (4.0ms)
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 2.1ms)
+
+
