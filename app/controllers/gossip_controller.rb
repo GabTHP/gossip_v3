@@ -1,20 +1,27 @@
 class GossipController < ApplicationController
    before_action :find_post, only: [:show, :edit, :update, :destroy]
+  
+   def index
+   @gossip = Gossip.new
+  end
+
+    def view
+    id = session[:user_id]
+    @user = User.find(id) #et hop, cette variable @user est l'instance User contenant toutes les infos de l'utilisateur connecté
+    end
+
+
   def show
-    @comment = Comment.where(gossip_id: @gossip.id)
+     @gossip = Gossip.find(params['id'])
   end
 
   def create
-    @city = City.create(name: params[:city])
-    @user = User.create(age: params[:age], first_name: params[:first_name], last_name: params[:last_name], email: params[:email], city_id: @city.id)
-    @gossip = Gossip.new(user_id: @user.id, content: params[:content], title: params[:title]) # avec xxx qui sont les données obtenues à partir du formulaire
-    if @gossip.save # essaie de sauvegarder en base @gossip
-      @success = true
-      render "gossip/new"
+   @gossip = Gossip.create(title:params[:title], content: params[:content], user_id: current_user.id)
+    if @gossip.save 
+      redirect_to root_path
+      flash.alert = "Le potin a bien été enregistré !"
     else
-      @city.destroy
-      @user.destroy
-      render "gossip/new"
+      render 'new'
     end
   end
 
@@ -45,6 +52,14 @@ class GossipController < ApplicationController
 
   def find_post
   @gossip = Gossip.find(params[:id])
+  end
+
+
+  def has_account
+    unless logged_in?
+      flash[:danger] = "Vous devez être connecté pour publier ou modifier un potin."
+      redirect_to new_session_path
+    end
   end
   
 end

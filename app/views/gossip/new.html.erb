@@ -2,67 +2,30 @@
 <h1>Balance ton Gossip !</h1>
 <hr>
 
-<div class="ml-5" style="width: 600px">
 <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <% if @gossip.errors.any? %>
 
-      <%= label_tag 'Title' %>
-      <%= text_field_tag 'title', @gossip.title%>
-      <br /> <br />
-
-      <%= label_tag 'Content' %>
-      <%= text_area_tag 'content', @gossip.content%>
-      <br /> <br />
-
-      <%= label_tag 'First Name' %>
-      <%= text_field_tag 'first_name', @user.first_name%>
-      <br /> <br />
-
-      <%= label_tag 'Last Name' %>
-      <%= text_field_tag 'last_name', @user.last_name%>
-      <br /> <br />
-
-      <%= label_tag 'Age' %>
-      <%= text_field_tag 'age', @user.age%>
-      <br /> <br />
-
-      <%= label_tag 'City' %>
-      <%= text_field_tag 'city', @city.name %>
-      <br /> <br />
-
-      <%= label_tag 'Email' %>
-      <%= text_field_tag 'email', @user.email%>
-      <br /> <br />
-
-      <%= submit_tag "Create Post" %>
-
-<% end %>
-</div>
-
-
-<% if @gossip.errors.any? || @user.errors.any? || @city.errors.any? then %>
-    <div class="alert alert-danger m-auto" style="width: 600px" role="alert">
-        <div id="error_explanation">
-            <h2>Validation Error</h2>
-            <% @user.errors.full_messages.each do |msg| %>
-                <p><%= msg %></p>
-            <% end %>
-            <% @gossip.errors.full_messages.each do |msg| %>
-                <% unless msg.include? "User" %>
-                        <p><%= msg %></p>
-                <% end %>     
-            <% end %>
-            <% @city.errors.full_messages.each do |msg| %>
-                <p><%= msg %></p>
-            <% end %>
+    <div class="alert alert-danger" role="alert">
+  <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+    <% @gossip.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
         </div>
-    </div>
-<% end %>
+    <% end %>
+    <p><strong> Réessaye en respectant bien les conditions ;)</strong></p>
+  <% end %>
 
-<% if @success == true then %>
-<div class="alert alert-success" role="alert">
-  <p>You have created a gossip successfully !</p>
+
+<div class="form-group" >
+  <label class="col-form-label" for="inputDefault">Titre du potin</label>
+  <input type="text" class="form-control" placeholder="Titre" id="inputDefault" name="title">
 </div>
-<script type="text/javascript">
-setTimeout("window.location='/'",5000);
-</script> 
+
+<div class="form-group">
+  <label for="exampleTextarea">Contenu du potin</label>
+  <textarea class="form-control" id="exampleTextarea" rows="6" name="content"></textarea>
+</div>
+
+    <button type="submit" class="btn btn-primary">Publiez le potin</button>
+
+
 <% end %>
